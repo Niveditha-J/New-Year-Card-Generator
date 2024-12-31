@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Year Fortune Flip</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(to bottom, #f7b42c, #fc575e);
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      margin: 20px 0;
+      font-size: 2.5em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .card {
+      background: white;
+      color: black;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.1);
+      background: #fc575e;
+      color: white;
+    }
+
+    .fortune {
+      margin-top: 30px;
+      font-size: 1.2em;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>New Year Fortune Flip</h1>
+  <p>🎉 Click a card to reveal your fortune for 2025! 🎆</p>
+
+  <div class="grid">
+    <div class="card" onclick="revealFortune(1)">January</div>
+    <div class="card" onclick="revealFortune(2)">February</div>
+    <div class="card" onclick="revealFortune(3)">March</div>
+    <div class="card" onclick="revealFortune(4)">April</div>
+    <div class="card" onclick="revealFortune(5)">May</div>
+    <div class="card" onclick="revealFortune(6)">June</div>
+    <div class="card" onclick="revealFortune(7)">July</div>
+    <div class="card" onclick="revealFortune(8)">August</div>
+    <div class="card" onclick="revealFortune(9)">September</div>
+    <div class="card" onclick="revealFortune(10)">October</div>
+    <div class="card" onclick="revealFortune(11)">November</div>
+    <div class="card" onclick="revealFortune(12)">December</div>
+  </div>
+
+  <div id="fortune" class="fortune"></div>
+
+  <script>
+    const fortunes = [
+      "January: A fresh start awaits you—time to shine!",
+      "February: Love and laughter will fill your days!",
+      "March: Luck is on your side this month!",
+      "April: Expect surprises that will brighten your path!",
+      "May: New opportunities are blossoming for you!",
+      "June: Joyful moments will keep you smiling!",
+      "July: Adventure is calling—answer with enthusiasm!",
+      "August: Hard work will pay off brilliantly!",
+      "September: Wisdom and success will guide your way!",
+      "October: Celebrate small victories—they matter most!",
+      "November: Gratitude will bring you unexpected blessings!",
+      "December: End the year with unforgettable memories!"
+    ];
+
+    function revealFortune(cardNumber) {
+      const fortune = fortunes[cardNumber - 1];
+      document.getElementById("fortune").textContent = `${fortune}`;
+    }
+  </script>
+</body>
+</html>
